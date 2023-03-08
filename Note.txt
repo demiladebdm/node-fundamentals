@@ -1,0 +1,117 @@
+NodeJs
+
+//CHAPTER 1
+This is an open-source, cross-platform Javascript runtime environment
+
+Open-Source - Source code is publicly available for sharing and modification
+Cross-Platform - Available on Mac, Linux, and Windows
+It is a Javascript runtime environment
+
+
+Why Learn Nodejs?
+1. Build end-to-end Javascript applications
+2. A number of major companies like linkedin, netflix, paypal have all migrated from other backend technologies to Nodejs
+3. Full stack development is one of the most sought out skill sets by companies
+4. Huge community support
+
+
+Course structure
+1. Terms and concepts to understand what NodeJs is
+2. Modules (User defined)
+3. Built-in modules
+4. Node.js internals
+5. npm - Node package manager
+6. CLI tools 
+7. Miscellaneous
+
+//CHAPTER 2
+What can we build with NodeJS?
+It allows you to build complex and powerful applications like
+
+Traditional websites, Backend services like APIs, Real-time applications, Streaming services, CLI tools, Multiplayer games etc
+
+// CHAPTER 3
+Executing JavaScript with Node
+1. Node REPL (Read Evaluate Print Loop)
+
+Modules 
+A module is an encapsulated and reusable chunk of code that has its own context. In Node.js, each file is treated as a separate module
+    Types of Modules
+        1. Local modules - Modules that we create in our application
+        1. Built-in modules - Modules that Node.js ships with out of the box
+        1. Third party modules - Modules written by other developers that we can use in our application
+    
+    Local modules: 
+        CommonJS is the standard that explains how a module should be shared
+
+        When loading a module into another file, we use the require function
+        
+        //ES modules - The extension is .mjs
+
+            // Importing JSON in NodeJs
+                JSON (JavaScript Object Notation) - A data interchange format commonly used with web servers
+
+            // Node watch mode : node --watch fileName
+
+    Built-in modules:
+        Models that Node.js ships with, also referred to as core modules, you will have to import them before you can use them
+        - Some of the important ones are:
+            path, events, fs, stream, http
+
+        //Path Modules: This provides utilities for working with files and directory paths
+
+        // Callbacks in Node.js
+            Any function that is passed as an argument to another function is called a callback function
+            Any function that accepts another function as an argument or returns a function is called a higher order function
+        - Types of Callbacks:
+            1. Syncronous - A callback function that gets executed immediately
+            2. Asyncronous - A callback function that gets at a later time (used to delay an execution until a particular event has occured). A callback that is often used to continue or resume code execution after an Asyncronous operation has completed
+
+        //Asyncronous JS
+        JavaScript is a synchronous, blocking, single-threaded language (use await)
+        
+        - For async data we use the then and catch block
+            .then((data) => concole.log(data)) - {this is called when the promise is resolved and the data is returned or accessed}
+            .catch((error) => concole.log(error)) - {this is called when the promise is rejected and the error is returned}
+
+    - Types of Streams
+        1. Readable Streams from which data can be read
+        2. Writable Streams to which we can write data
+        3. Duplex Streams that are both readable and writable
+        4. Transform Streams that can modify or transform the data as it is written and read
+    
+    // PIPES
+    Takes a readable stream and connects it with a wrotable stream
+
+
+// Routing
+    req.url - This gives us the root or the exact path (i.e it gives us the URL query string)
+
+                            ____________________________________________________________________________________
+                                    const server = http.createServer((req, res) => {
+                                        if (req.url == "/") {
+                                            res.writeHead(200, { "Content-Type": "text/plain" });
+                                            res.end("Home page");
+                                        } else if (req.url == "/about") {
+                                            res.writeHead(200, { "Content-Type": "text/plain" });
+                                            res.end("About page");
+                                        } else if (req.url == "/api") {
+                                            res.writeHead(200, { "Content-Type": "application/json" });
+                                            res.end(JSON.stringify({
+                                                firstname: "Daddy",
+                                                lastname: "Dof"
+                                            }));
+                                        } else {
+                                            res.writeHead(404);
+                                            res.end("Page not found");
+                                        }
+                                    });
+                            ____________________________________________________________________________________
+    
+    Using crypto node module
+        crypto.pbkdf2 - (pbkdf2 stands for Password Based Key Derivation Function 2) used for hashing passwords before storing them
+
+
+    // Event Loop: This is a design pattern that orchestrates or co-ordinates the execution of synchronous and asynchronous code in Node.js
+
+            

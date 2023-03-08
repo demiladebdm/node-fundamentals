@@ -1,0 +1,7 @@
+{
+    "name": "Bruce Wayne",
+    "address": {
+        "street": "555 Main St",
+        "city": "Gotham"
+    }   
+}
